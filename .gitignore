@@ -1,0 +1,6 @@
+# Arquivos de build do PlatformIO
+.pio
+.vscode/
+
+# Credenciais de WiFi ou API locais
+include/secrets.h
