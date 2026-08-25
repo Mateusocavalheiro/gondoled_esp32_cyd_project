@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração do Dispositivo CYD</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 400px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Configuração CYD</h2>
+        <form action="/salvar" method="POST">
+            <div class="form-group">
+                <label for="ssid">Nome do Wi-Fi (SSID):</label>
+                <input type="text" id="ssid" name="ssid" required placeholder="Ex: MinhaRede_2G">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha do Wi-Fi:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="apikey">Chave da API (API Key):</label>
+                <input type="password" id="apikey" name="apikey" required placeholder="Insira sua chave de acesso">
+            </div>
+            <button type="submit">Salvar e Reiniciar</button>
+        </form>
+    </div>
+</body>
+</html>
