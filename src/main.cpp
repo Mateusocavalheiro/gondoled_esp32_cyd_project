@@ -29,7 +29,6 @@ void setup() {
 
     Storage_Init();
     UI_Init();
-    
     // 1. Força a tela a limpar qualquer vestígio de QR Code antigo
     UI_TelaCarregamento(); 
     

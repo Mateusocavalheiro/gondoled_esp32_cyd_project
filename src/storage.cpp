@@ -26,6 +26,7 @@ void Storage_SalvarProduto(Produto p) {
     prefs.putString("nome", p.nome);
     prefs.putFloat("preco", p.preco);
     prefs.putFloat("preco_clube", p.precoClube);
+    prefs.putString("validade", p.validade);
 }
 
 Produto Storage_LerProdutoOffline() {
@@ -33,5 +34,8 @@ Produto Storage_LerProdutoOffline() {
     p.nome = prefs.getString("nome", "Aguardando...");
     p.preco = prefs.getFloat("preco", 0.0);
     p.precoClube = prefs.getFloat("preco_clube", 0.0);
+    p.validade = prefs.getString("validade", "N/A"); 
+    
+    prefs.end();
     return p;
 }

@@ -39,9 +39,16 @@ bool Network_ConectarWiFi() {
 }
 
 void Network_IniciarPortalCativo() {
-    String SSID_AP = "ESL-" + macPlaca.substring(macPlaca.length() - 4);
+    // 1. Pega o MAC global (que tem os dois pontos para a Azure)
+    String macLimpo = macPlaca; 
     
-    WiFi.mode(WIFI_AP);
+    // 2. Remove os dois pontos apenas nesta variavel local
+    macLimpo.replace(":", "");  
+    
+    // 3. Pega os ultimos 4 digitos limpos (ex: 45FC) e cria o nome da rede
+    String SSID_AP = "ESL-" + macLimpo.substring(macLimpo.length() - 4);
+    
+    // 4. Liga a antena com o nome limpo
     WiFi.softAP(SSID_AP.c_str());
     dnsServer.start(53, "*", WiFi.softAPIP());
 

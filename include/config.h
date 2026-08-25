@@ -6,6 +6,7 @@ struct Produto {
     String nome;
     float preco;
     float precoClube;
+    String validade;
 };
 
 //Struct para credenciais

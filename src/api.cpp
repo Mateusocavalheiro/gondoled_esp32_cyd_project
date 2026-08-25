@@ -37,8 +37,9 @@ void API_VerificarBanco() {
             p_novo.nome = doc["nome_produto"].as<String>();
             p_novo.preco = doc["preco"].as<float>();
             p_novo.precoClube = doc["preco_clube"].as<float>();
+            p_novo.validade = doc["prazo_validade"].as<String>();
 
-            if (p_novo.nome != produtoAtual.nome || p_novo.preco != produtoAtual.preco || p_novo.precoClube != produtoAtual.precoClube) {
+            if (p_novo.nome != produtoAtual.nome || p_novo.preco != produtoAtual.preco || p_novo.precoClube != produtoAtual.precoClube || p_novo.validade != produtoAtual.validade) {
                 Serial.println("-> [API] Novos valores detectados! Atualizando...");
                 produtoAtual = p_novo;
                 Storage_SalvarProduto(produtoAtual);
